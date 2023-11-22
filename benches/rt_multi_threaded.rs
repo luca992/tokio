@@ -8,7 +8,7 @@ use tokio::sync::oneshot;
 use std::sync::atomic::Ordering::Relaxed;
 use std::sync::atomic::{AtomicBool, AtomicUsize};
 use std::sync::{mpsc, Arc};
-use std::time::{Duration, Instant};
+use web_time::{Duration, Instant};
 
 use criterion::{criterion_group, criterion_main, Criterion};
 

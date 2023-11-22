@@ -2,7 +2,7 @@ use crate::runtime::Handle;
 
 use std::ops::Range;
 use std::sync::atomic::Ordering::Relaxed;
-use std::time::Duration;
+use web_time::Duration;
 
 /// Handle to the runtime's metrics.
 ///
@@ -607,7 +607,7 @@ impl RuntimeMetrics {
     /// ```
     ///
     /// [`enable_metrics_poll_count_histogram()`]: crate::runtime::Builder::enable_metrics_poll_count_histogram
-    /// [`Instant::now()`]: std::time::Instant::now
+    /// [`Instant::now()`]: web_time::Instant::now
     pub fn poll_count_histogram_enabled(&self) -> bool {
         self.handle
             .inner

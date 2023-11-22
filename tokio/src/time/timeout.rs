@@ -52,7 +52,7 @@ use std::task::{self, Poll};
 /// use tokio::time::timeout;
 /// use tokio::sync::oneshot;
 ///
-/// use std::time::Duration;
+/// use web_time::Duration;
 ///
 /// # async fn dox() {
 /// let (tx, rx) = oneshot::channel();
@@ -129,7 +129,7 @@ where
 /// use tokio::time::{Instant, timeout_at};
 /// use tokio::sync::oneshot;
 ///
-/// use std::time::Duration;
+/// use web_time::Duration;
 ///
 /// # async fn dox() {
 /// let (tx, rx) = oneshot::channel();

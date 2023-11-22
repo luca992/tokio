@@ -6,7 +6,7 @@
 use crate::loom::sync::Arc;
 use crate::sync::oneshot;
 
-use std::time::Duration;
+use web_time::Duration;
 
 #[derive(Debug, Clone)]
 pub(super) struct Sender {

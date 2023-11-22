@@ -4,7 +4,7 @@
 
 use crate::loom::sync::{Condvar, Mutex};
 use std::fmt;
-use std::time::{Duration, Instant};
+use web_time::{Duration, Instant};
 
 /// A barrier enables multiple threads to synchronize the beginning
 /// of some computation.

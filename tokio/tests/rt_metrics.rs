@@ -220,7 +220,7 @@ fn worker_poll_count_and_time() {
 
     async fn task() {
         // Sync sleep
-        std::thread::sleep(std::time::Duration::from_micros(10));
+        std::thread::sleep(web_time::Duration::from_micros(10));
     }
 
     let rt = current_thread();

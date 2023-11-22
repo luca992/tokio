@@ -92,6 +92,7 @@ time = []
 tokio-macros = { version = "~2.2.0", path = "../tokio-macros", optional = true }
 
 pin-project-lite = "0.2.11"
+web-time = "0.2.3"
 
 # Everything else is optional...
 bytes = { version = "1.0.0", optional = true }

@@ -6,7 +6,7 @@ use std::net::SocketAddr;
 
 #[cfg(unix)]
 use std::os::unix::io::{AsFd, AsRawFd, BorrowedFd, FromRawFd, IntoRawFd, RawFd};
-use std::time::Duration;
+use web_time::Duration;
 
 cfg_windows! {
     use crate::os::windows::io::{AsRawSocket, FromRawSocket, IntoRawSocket, RawSocket, AsSocket, BorrowedSocket};

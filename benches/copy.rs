@@ -7,7 +7,7 @@ use tokio::io::{copy, repeat, AsyncRead, AsyncReadExt, AsyncWrite};
 use tokio::time::{interval, Interval, MissedTickBehavior};
 
 use std::task::Poll;
-use std::time::Duration;
+use web_time::Duration;
 
 const KILO: usize = 1024;
 

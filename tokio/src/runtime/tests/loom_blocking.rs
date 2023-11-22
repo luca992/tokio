@@ -75,7 +75,7 @@ fn spawn_mandatory_blocking_should_run_even_when_shutting_down_from_other_thread
 
 #[test]
 fn spawn_blocking_when_paused() {
-    use std::time::Duration;
+    use web_time::Duration;
     loom::model(|| {
         let rt = crate::runtime::Builder::new_current_thread()
             .enable_time()

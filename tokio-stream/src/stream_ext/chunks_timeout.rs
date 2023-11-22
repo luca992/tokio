@@ -6,7 +6,7 @@ use core::future::Future;
 use core::pin::Pin;
 use core::task::{Context, Poll};
 use pin_project_lite::pin_project;
-use std::time::Duration;
+use web_time::Duration;
 
 pin_project! {
     /// Stream returned by the [`chunks_timeout`](super::StreamExt::chunks_timeout) method.

@@ -4,7 +4,7 @@
 use std::mem;
 use std::ops::Drop;
 use std::sync::atomic::{AtomicU32, Ordering};
-use std::time::Duration;
+use web_time::Duration;
 use tokio::runtime;
 use tokio::sync::OnceCell;
 use tokio::sync::SetError;

@@ -9,7 +9,7 @@ use tokio_test::{assert_ok, assert_pending, assert_ready_ok};
 
 use std::io;
 use std::task::Poll;
-use std::time::Duration;
+use web_time::Duration;
 
 use futures::future::poll_fn;
 

@@ -494,10 +494,10 @@ async fn hang_on_shutdown() {
     });
 
     tokio::spawn(async {
-        tokio::time::sleep(std::time::Duration::from_secs(2)).await;
+        tokio::time::sleep(web_time::Duration::from_secs(2)).await;
         drop(sync_tx);
     });
-    tokio::time::sleep(std::time::Duration::from_secs(1)).await;
+    tokio::time::sleep(web_time::Duration::from_secs(1)).await;
 }
 
 /// Demonstrates tokio-rs/tokio#3869
@@ -625,7 +625,7 @@ fn test_nested_block_in_place_with_block_on_between() {
 #[cfg(not(tokio_no_tuning_tests))]
 fn test_tuning() {
     use std::sync::atomic::AtomicBool;
-    use std::time::Duration;
+    use web_time::Duration;
 
     let rt = runtime::Builder::new_multi_thread()
         .worker_threads(1)
@@ -768,7 +768,7 @@ mod unstable {
         let (kill_bg_thread, recv) = channel::<()>();
         let handle = rt.handle().clone();
         let bg_thread = std::thread::spawn(move || {
-            let one_sec = std::time::Duration::from_secs(1);
+            let one_sec = web_time::Duration::from_secs(1);
             while recv.recv_timeout(one_sec) == Err(RecvTimeoutError::Timeout) {
                 handle.spawn(async {});
             }

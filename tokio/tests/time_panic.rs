@@ -3,7 +3,7 @@
 
 use futures::future;
 use std::error::Error;
-use std::time::Duration;
+use web_time::Duration;
 use tokio::runtime::{Builder, Runtime};
 use tokio::time::{self, interval, interval_at, timeout, Instant};
 

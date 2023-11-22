@@ -5,7 +5,7 @@ use tokio::{runtime, task, time};
 use tokio_test::assert_ok;
 
 use std::thread;
-use std::time::Duration;
+use web_time::Duration;
 
 mod support {
     pub(crate) mod mpsc_stream;
@@ -256,7 +256,7 @@ async fn blocking_when_paused() {
 #[cfg(feature = "test-util")]
 #[tokio::test(start_paused = true)]
 async fn blocking_task_wakes_paused_runtime() {
-    let t0 = std::time::Instant::now();
+    let t0 = web_time::Instant::now();
     time::timeout(
         Duration::from_secs(15),
         task::spawn_blocking(|| thread::sleep(Duration::from_millis(1))),
@@ -273,7 +273,7 @@ async fn blocking_task_wakes_paused_runtime() {
 #[cfg(feature = "test-util")]
 #[tokio::test(start_paused = true)]
 async fn unawaited_blocking_task_wakes_paused_runtime() {
-    let t0 = std::time::Instant::now();
+    let t0 = web_time::Instant::now();
 
     // When this task finishes, time should auto-advance, even though the
     // JoinHandle has not been awaited yet.
@@ -293,7 +293,7 @@ async fn unawaited_blocking_task_wakes_paused_runtime() {
 #[cfg(feature = "test-util")]
 #[tokio::test(start_paused = true)]
 async fn panicking_blocking_task_wakes_paused_runtime() {
-    let t0 = std::time::Instant::now();
+    let t0 = web_time::Instant::now();
     let result = time::timeout(
         Duration::from_secs(15),
         task::spawn_blocking(|| {

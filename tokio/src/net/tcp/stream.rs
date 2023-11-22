@@ -1,7 +1,7 @@
 cfg_not_wasi! {
     use crate::future::poll_fn;
     use crate::net::{to_socket_addrs, ToSocketAddrs};
-    use std::time::Duration;
+    use web_time::Duration;
 }
 
 use crate::io::{AsyncRead, AsyncWrite, Interest, PollEvented, ReadBuf, Ready};

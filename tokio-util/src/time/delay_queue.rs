@@ -77,7 +77,7 @@ use std::task::{self, Poll, Waker};
 /// use futures::ready;
 /// use std::collections::HashMap;
 /// use std::task::{Context, Poll};
-/// use std::time::Duration;
+/// use web_time::Duration;
 /// # type CacheKey = String;
 /// # type Value = String;
 ///
@@ -456,7 +456,7 @@ impl<T> DelayQueue<T> {
     ///
     /// ```rust
     /// # use tokio_util::time::DelayQueue;
-    /// # use std::time::Duration;
+    /// # use web_time::Duration;
     ///
     /// # #[tokio::main]
     /// # async fn main() {
@@ -632,7 +632,7 @@ impl<T> DelayQueue<T> {
     ///
     /// ```rust
     /// use tokio_util::time::DelayQueue;
-    /// use std::time::Duration;
+    /// use web_time::Duration;
     ///
     /// # #[tokio::main]
     /// # async fn main() {
@@ -705,7 +705,7 @@ impl<T> DelayQueue<T> {
     ///
     /// ```rust
     /// use tokio_util::time::DelayQueue;
-    /// use std::time::Duration;
+    /// use web_time::Duration;
     ///
     /// # #[tokio::main]
     /// # async fn main() {
@@ -753,7 +753,7 @@ impl<T> DelayQueue<T> {
     ///
     /// ```rust
     /// use tokio_util::time::DelayQueue;
-    /// use std::time::Duration;
+    /// use web_time::Duration;
     ///
     /// # #[tokio::main(flavor = "current_thread")]
     /// # async fn main() {
@@ -854,7 +854,7 @@ impl<T> DelayQueue<T> {
     ///
     /// ```rust
     /// use tokio_util::time::DelayQueue;
-    /// use std::time::Duration;
+    /// use web_time::Duration;
     ///
     /// # #[tokio::main]
     /// # async fn main() {
@@ -887,7 +887,7 @@ impl<T> DelayQueue<T> {
     ///
     /// ```rust
     /// use tokio_util::time::DelayQueue;
-    /// use std::time::Duration;
+    /// use web_time::Duration;
     ///
     /// # #[tokio::main]
     /// # async fn main() {
@@ -937,7 +937,7 @@ impl<T> DelayQueue<T> {
     ///
     /// ```rust
     /// use tokio_util::time::DelayQueue;
-    /// use std::time::Duration;
+    /// use web_time::Duration;
     ///
     /// # #[tokio::main]
     /// # async fn main() {
@@ -968,7 +968,7 @@ impl<T> DelayQueue<T> {
     ///
     /// ```rust
     /// use tokio_util::time::DelayQueue;
-    /// use std::time::Duration;
+    /// use web_time::Duration;
     ///
     /// # #[tokio::main]
     /// # async fn main() {
@@ -1010,7 +1010,7 @@ impl<T> DelayQueue<T> {
     ///
     /// ```rust
     /// use tokio_util::time::DelayQueue;
-    /// use std::time::Duration;
+    /// use web_time::Duration;
     ///
     /// # #[tokio::main]
     /// # async fn main() {
@@ -1045,7 +1045,7 @@ impl<T> DelayQueue<T> {
     ///
     /// ```
     /// use tokio_util::time::DelayQueue;
-    /// use std::time::Duration;
+    /// use web_time::Duration;
     ///
     /// # #[tokio::main]
     /// # async fn main() {
@@ -1075,7 +1075,7 @@ impl<T> DelayQueue<T> {
     ///
     /// ```
     /// use tokio_util::time::DelayQueue;
-    /// use std::time::Duration;
+    /// use web_time::Duration;
     ///
     /// # #[tokio::main]
     /// # async fn main() {

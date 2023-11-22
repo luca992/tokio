@@ -4,7 +4,7 @@ use crate::util::rand::{RngSeed, RngSeedGenerator};
 
 use std::fmt;
 use std::io;
-use std::time::Duration;
+use web_time::Duration;
 
 /// Builds Tokio Runtime with custom configuration values.
 ///
@@ -729,7 +729,7 @@ impl Builder {
     ///
     /// ```
     /// # use tokio::runtime;
-    /// # use std::time::Duration;
+    /// # use web_time::Duration;
     /// # pub fn main() {
     /// let rt = runtime::Builder::new_multi_thread()
     ///     .thread_keep_alive(Duration::from_millis(100))
@@ -963,7 +963,7 @@ impl Builder {
         ///     .build()
         ///     .unwrap();
         /// # // Test default values here
-        /// # fn us(n: u64) -> std::time::Duration { std::time::Duration::from_micros(n) }
+        /// # fn us(n: u64) -> web_time::Duration { web_time::Duration::from_micros(n) }
         /// # let m = rt.handle().metrics();
         /// # assert_eq!(m.poll_count_histogram_num_buckets(), 10);
         /// # assert_eq!(m.poll_count_histogram_bucket_range(0), us(0)..us(100));
@@ -971,7 +971,7 @@ impl Builder {
         /// ```
         ///
         /// [`Handle::metrics()`]: crate::runtime::Handle::metrics
-        /// [`Instant::now()`]: std::time::Instant::now
+        /// [`Instant::now()`]: web_time::Instant::now
         pub fn enable_metrics_poll_count_histogram(&mut self) -> &mut Self {
             self.metrics_poll_count_histogram_enable = true;
             self
@@ -1022,7 +1022,7 @@ impl Builder {
         ///
         /// ```
         /// use tokio::runtime;
-        /// use std::time::Duration;
+        /// use web_time::Duration;
         ///
         /// let rt = runtime::Builder::new_multi_thread()
         ///     .enable_metrics_poll_count_histogram()

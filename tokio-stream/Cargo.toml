@@ -40,6 +40,7 @@ futures-core = { version = "0.3.0" }
 pin-project-lite = "0.2.11"
 tokio = { version = "1.15.0", path = "../tokio", features = ["sync"] }
 tokio-util = { version = "0.7.0", path = "../tokio-util", optional = true }
+web-time = "0.2.3"
 
 [dev-dependencies]
 tokio = { version = "1.2.0", path = "../tokio", features = ["full", "test-util"] }

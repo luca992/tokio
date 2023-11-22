@@ -7,7 +7,7 @@ use core::pin::Pin;
 use core::task::{Context, Poll};
 use pin_project_lite::pin_project;
 use std::fmt;
-use std::time::Duration;
+use web_time::Duration;
 
 pin_project! {
     /// Stream returned by the [`timeout`](super::StreamExt::timeout) method.

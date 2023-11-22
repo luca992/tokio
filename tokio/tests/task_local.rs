@@ -23,7 +23,7 @@ async fn local() {
             assert_eq!(*v, 2);
         });
 
-        tokio::time::sleep(std::time::Duration::from_millis(10)).await;
+        tokio::time::sleep(web_time::Duration::from_millis(10)).await;
 
         assert_eq!(REQ_ID.get(), 2);
     }));

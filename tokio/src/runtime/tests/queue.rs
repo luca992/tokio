@@ -3,7 +3,7 @@ use crate::runtime::task::{self, Schedule, Task};
 
 use std::cell::RefCell;
 use std::thread;
-use std::time::Duration;
+use web_time::Duration;
 
 #[allow(unused)]
 macro_rules! assert_metrics {

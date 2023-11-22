@@ -6,7 +6,7 @@ use std::sync::{
     atomic::{AtomicBool, Ordering},
     Arc,
 };
-use std::time::Duration;
+use web_time::Duration;
 use std::{
     future::Future,
     io::{self, ErrorKind, Read, Write},

@@ -8,7 +8,7 @@ use crate::runtime::driver::{self, Driver};
 use crate::util::TryLock;
 
 use std::sync::atomic::Ordering::SeqCst;
-use std::time::Duration;
+use web_time::Duration;
 
 pub(crate) struct Parker {
     inner: Arc<Inner>,

@@ -1,7 +1,7 @@
 use crate::runtime::metrics::{HistogramBatch, WorkerMetrics};
 
 use std::sync::atomic::Ordering::Relaxed;
-use std::time::{Duration, Instant};
+use web_time::{Duration, Instant};
 
 pub(crate) struct MetricsBatch {
     /// Number of times the worker parked.

@@ -12,7 +12,7 @@ use std::collections::{HashMap, VecDeque};
 use std::fmt;
 use std::io;
 use std::sync::atomic::{AtomicUsize, Ordering};
-use std::time::Duration;
+use web_time::Duration;
 
 pub(crate) struct BlockingPool {
     spawner: Spawner,

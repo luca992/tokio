@@ -4,7 +4,7 @@ use crate::loom::sync::atomic::AtomicUsize;
 use crate::loom::sync::{Arc, Condvar, Mutex};
 
 use std::sync::atomic::Ordering::SeqCst;
-use std::time::Duration;
+use web_time::Duration;
 
 #[derive(Debug)]
 pub(crate) struct ParkThread {

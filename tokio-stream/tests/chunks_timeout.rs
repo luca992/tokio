@@ -7,7 +7,7 @@ use tokio_test::assert_pending;
 use tokio_test::task;
 
 use futures::FutureExt;
-use std::time::Duration;
+use web_time::Duration;
 
 #[tokio::test(start_paused = true)]
 async fn usage() {

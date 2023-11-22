@@ -4,7 +4,7 @@ use crate::loom::thread::AccessError;
 use crate::util::markers::NotSendOrSync;
 
 use std::marker::PhantomData;
-use std::time::Duration;
+use web_time::Duration;
 
 /// Guard tracking that a caller has entered a blocking region.
 #[must_use]
@@ -77,7 +77,7 @@ impl BlockingRegionGuard {
         use crate::runtime::park::CachedParkThread;
         use std::task::Context;
         use std::task::Poll::Ready;
-        use std::time::Instant;
+        use web_time::Instant;
 
         let mut park = CachedParkThread::new();
         let waker = park.waker().map_err(|_| ())?;

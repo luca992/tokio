@@ -8,7 +8,7 @@
 //!
 //! This type must be used from within the context of the `Runtime`.
 
-use std::time::Duration;
+use web_time::Duration;
 
 mod wheel;
 

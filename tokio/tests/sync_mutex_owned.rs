@@ -60,7 +60,7 @@ fn readiness() {
 #[tokio::test]
 #[cfg(feature = "full")]
 async fn aborted_future_1() {
-    use std::time::Duration;
+    use web_time::Duration;
     use tokio::time::{interval, timeout};
 
     let m1: Arc<Mutex<usize>> = Arc::new(Mutex::new(0));
@@ -90,7 +90,7 @@ async fn aborted_future_1() {
 #[tokio::test]
 #[cfg(feature = "full")]
 async fn aborted_future_2() {
-    use std::time::Duration;
+    use web_time::Duration;
     use tokio::time::timeout;
 
     let m1: Arc<Mutex<usize>> = Arc::new(Mutex::new(0));

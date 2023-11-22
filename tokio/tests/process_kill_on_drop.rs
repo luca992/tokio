@@ -3,7 +3,7 @@
 
 use std::io::ErrorKind;
 use std::process::Stdio;
-use std::time::Duration;
+use web_time::Duration;
 use tokio::io::AsyncReadExt;
 use tokio::process::Command;
 use tokio::time::sleep;

@@ -19,7 +19,7 @@ use std::sync::atomic::AtomicUsize;
 use std::sync::atomic::Ordering;
 #[cfg(not(target_os = "wasi"))]
 use std::sync::atomic::Ordering::SeqCst;
-use std::time::Duration;
+use web_time::Duration;
 
 #[tokio::test(flavor = "current_thread")]
 async fn local_current_thread_scheduler() {

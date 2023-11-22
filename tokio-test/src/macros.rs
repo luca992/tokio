@@ -264,7 +264,7 @@ macro_rules! assert_err {
 ///
 /// ```rust
 /// use tokio::time::{self, Instant};
-/// use std::time::Duration;
+/// use web_time::Duration;
 /// use tokio_test::assert_elapsed;
 /// # async fn test_time_passed() {
 ///
@@ -282,11 +282,11 @@ macro_rules! assert_elapsed {
     ($start:expr, $dur:expr) => {{
         let elapsed = $start.elapsed();
         // type ascription improves compiler error when wrong type is passed
-        let lower: std::time::Duration = $dur;
+        let lower: web_time::Duration = $dur;
 
         // Handles ms rounding
         assert!(
-            elapsed >= lower && elapsed <= lower + std::time::Duration::from_millis(1),
+            elapsed >= lower && elapsed <= lower + web_time::Duration::from_millis(1),
             "actual = {:?}, expected = {:?}",
             elapsed,
             lower

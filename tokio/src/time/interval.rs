@@ -417,7 +417,7 @@ impl Interval {
     /// ```
     /// use tokio::time;
     ///
-    /// use std::time::Duration;
+    /// use web_time::Duration;
     ///
     /// #[tokio::main]
     /// async fn main() {
@@ -503,7 +503,7 @@ impl Interval {
     /// ```
     /// use tokio::time;
     ///
-    /// use std::time::Duration;
+    /// use web_time::Duration;
     ///
     /// #[tokio::main]
     /// async fn main() {
@@ -535,7 +535,7 @@ impl Interval {
     /// ```
     /// use tokio::time;
     ///
-    /// use std::time::Duration;
+    /// use web_time::Duration;
     ///
     /// #[tokio::main]
     /// async fn main() {
@@ -556,7 +556,7 @@ impl Interval {
         self.delay.as_mut().reset(Instant::now());
     }
 
-    /// Resets the interval after the specified [`std::time::Duration`].
+    /// Resets the interval after the specified [`web_time::Duration`].
     ///
     /// This method ignores [`MissedTickBehavior`] strategy.
     ///
@@ -567,7 +567,7 @@ impl Interval {
     /// ```
     /// use tokio::time;
     ///
-    /// use std::time::Duration;
+    /// use web_time::Duration;
     ///
     /// #[tokio::main]
     /// async fn main() {
@@ -603,7 +603,7 @@ impl Interval {
     /// ```
     /// use tokio::time::{self, Instant};
     ///
-    /// use std::time::Duration;
+    /// use web_time::Duration;
     ///
     /// #[tokio::main]
     /// async fn main() {

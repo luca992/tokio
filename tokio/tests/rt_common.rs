@@ -123,7 +123,7 @@ rt_test! {
 
     #[cfg(not(target_os="wasi"))]
     use std::thread;
-    use std::time::{Duration, Instant};
+    use web_time::{Duration, Instant};
 
     #[test]
     fn block_on_sync() {
@@ -600,7 +600,7 @@ rt_test! {
 
         rt.block_on(async move {
             assert_ok!(tokio::task::spawn_blocking(|| {
-                let now = std::time::Instant::now();
+                let now = web_time::Instant::now();
                 let dur = Duration::from_millis(1);
 
                 // use the futures' block_on fn to make sure we aren't setting
@@ -747,7 +747,7 @@ rt_test! {
             }
 
             // Wait a bit and run the test again.
-            std::thread::sleep(std::time::Duration::from_secs(2));
+            std::thread::sleep(web_time::Duration::from_secs(2));
         }
 
         panic!("yield_defers_until_park is failing consistently");
@@ -776,7 +776,7 @@ rt_test! {
                     barrier.wait();
 
                     while !flag.load(SeqCst) {
-                        std::thread::sleep(std::time::Duration::from_millis(1));
+                        std::thread::sleep(web_time::Duration::from_millis(1));
                     }
                 });
             }
@@ -1072,7 +1072,7 @@ rt_test! {
         let runtime = rt();
 
         runtime.block_on(async move {
-            tokio::time::sleep(std::time::Duration::from_millis(100)).await;
+            tokio::time::sleep(web_time::Duration::from_millis(100)).await;
         });
 
         Arc::try_unwrap(runtime).unwrap().shutdown_timeout(Duration::from_secs(10_000));

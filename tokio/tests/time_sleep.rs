@@ -190,7 +190,7 @@ async fn greater_than_max() {
 #[tokio::test]
 async fn short_sleeps() {
     for _ in 0..1000 {
-        tokio::time::sleep(std::time::Duration::from_millis(0)).await;
+        tokio::time::sleep(web_time::Duration::from_millis(0)).await;
     }
 }
 
@@ -235,7 +235,7 @@ async fn long_sleeps() {
 
 #[tokio::test]
 async fn reset_after_firing() {
-    let timer = tokio::time::sleep(std::time::Duration::from_millis(1));
+    let timer = tokio::time::sleep(web_time::Duration::from_millis(1));
     tokio::pin!(timer);
 
     let deadline = timer.deadline();
@@ -246,7 +246,7 @@ async fn reset_after_firing() {
         .poll(&mut Context::from_waker(noop_waker_ref())));
     timer
         .as_mut()
-        .reset(tokio::time::Instant::now() + std::time::Duration::from_secs(600));
+        .reset(tokio::time::Instant::now() + web_time::Duration::from_secs(600));
 
     assert_ne!(deadline, timer.deadline());
 
@@ -271,13 +271,13 @@ async fn exactly_max() {
 async fn issue_5183() {
     time::pause();
 
-    let big = std::time::Duration::from_secs(u64::MAX / 10);
+    let big = web_time::Duration::from_secs(u64::MAX / 10);
     // This is a workaround since awaiting sleep(big) will never finish.
     #[rustfmt::skip]
     tokio::select! {
 	biased;
         _ = tokio::time::sleep(big) => {}
-        _ = tokio::time::sleep(std::time::Duration::from_nanos(1)) => {}
+        _ = tokio::time::sleep(web_time::Duration::from_nanos(1)) => {}
     }
 }
 

@@ -1,5 +1,5 @@
 use futures_util::StreamExt;
-use std::time::Duration;
+use web_time::Duration;
 use tokio_test::stream_mock::StreamMockBuilder;
 
 #[tokio::test]
@@ -28,7 +28,7 @@ async fn test_stream_mock_wait() {
         .build();
 
     assert_eq!(stream_mock.next().await, Some(1));
-    let start = std::time::Instant::now();
+    let start = web_time::Instant::now();
     assert_eq!(stream_mock.next().await, Some(2));
     let elapsed = start.elapsed();
     assert!(elapsed >= Duration::from_millis(300));

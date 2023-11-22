@@ -72,7 +72,7 @@ use crate::util::rand::{FastRand, RngSeedGenerator};
 use std::cell::{Cell, RefCell};
 use std::cmp;
 use std::task::Waker;
-use std::time::Duration;
+use web_time::Duration;
 
 cfg_metrics! {
     mod metrics;
@@ -853,7 +853,7 @@ impl Worker {
 
             if i > 0 {
                 super::counters::inc_num_spin_stall();
-                std::thread::sleep(std::time::Duration::from_micros(i as u64));
+                std::thread::sleep(web_time::Duration::from_micros(i as u64));
             }
         }
 

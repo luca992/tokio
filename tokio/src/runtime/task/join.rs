@@ -127,7 +127,7 @@ cfg_rt! {
     /// ```no_run
     /// use tokio::task;
     /// use tokio::time;
-    /// use std::time::Duration;
+    /// use web_time::Duration;
     ///
     /// # #[tokio::main] async fn main() {
     /// let original_task = task::spawn(async {

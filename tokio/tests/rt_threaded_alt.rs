@@ -495,10 +495,10 @@ async fn hang_on_shutdown() {
     });
 
     tokio::spawn(async {
-        tokio::time::sleep(std::time::Duration::from_secs(2)).await;
+        tokio::time::sleep(web_time::Duration::from_secs(2)).await;
         drop(sync_tx);
     });
-    tokio::time::sleep(std::time::Duration::from_secs(1)).await;
+    tokio::time::sleep(web_time::Duration::from_secs(1)).await;
 }
 
 /// Demonstrates tokio-rs/tokio#3869
@@ -598,7 +598,7 @@ async fn test_block_in_place4() {
 #[cfg(not(tokio_no_tuning_tests))]
 fn test_tuning() {
     use std::sync::atomic::AtomicBool;
-    use std::time::Duration;
+    use web_time::Duration;
 
     let rt = runtime::Builder::new_multi_thread_alt()
         .worker_threads(1)

@@ -5,7 +5,7 @@ use tokio::time;
 use tokio_stream::StreamExt;
 use tokio_test::*;
 
-use std::time::Duration;
+use web_time::Duration;
 
 #[tokio::test]
 async fn usage() {

@@ -16,7 +16,7 @@ use std::future::Future;
 use std::sync::atomic::Ordering::{AcqRel, Release};
 use std::task::Poll::{Pending, Ready};
 use std::task::Waker;
-use std::time::Duration;
+use web_time::Duration;
 
 /// Executes tasks on the current thread
 pub(crate) struct CurrentThread {

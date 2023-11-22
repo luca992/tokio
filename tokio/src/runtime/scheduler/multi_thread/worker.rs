@@ -72,7 +72,7 @@ use crate::util::rand::{FastRand, RngSeedGenerator};
 
 use std::cell::RefCell;
 use std::task::Waker;
-use std::time::Duration;
+use web_time::Duration;
 
 cfg_metrics! {
     mod metrics;

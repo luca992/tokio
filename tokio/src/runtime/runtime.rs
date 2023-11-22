@@ -4,7 +4,7 @@ use crate::runtime::{context, EnterGuard, Handle};
 use crate::task::JoinHandle;
 
 use std::future::Future;
-use std::time::Duration;
+use web_time::Duration;
 
 cfg_rt_multi_thread! {
     use crate::runtime::Builder;
@@ -401,7 +401,7 @@ impl Runtime {
     /// use tokio::task;
     ///
     /// use std::thread;
-    /// use std::time::Duration;
+    /// use web_time::Duration;
     ///
     /// fn main() {
     ///    let runtime = Runtime::new().unwrap();
