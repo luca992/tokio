@@ -77,7 +77,7 @@ impl BlockingRegionGuard {
         use crate::runtime::park::CachedParkThread;
         use std::task::Context;
         use std::task::Poll::Ready;
-        use std::time::Instant;
+        use instant::Instant;
 
         let mut park = CachedParkThread::new();
         let waker = park.waker().map_err(|_| ())?;

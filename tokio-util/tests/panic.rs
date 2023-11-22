@@ -112,7 +112,7 @@ fn delay_queue_insert_at_panic_caller() -> Result<(), Box<dyn Error>> {
         rt.block_on(async {
             let mut queue = task::spawn(DelayQueue::with_capacity(3));
 
-            //let st = std::time::Instant::from(SystemTime::UNIX_EPOCH);
+            //let st = instant::Instant::from(SystemTime::UNIX_EPOCH);
             let _k = queue.insert_at(
                 "1",
                 Instant::now() + Duration::from_millis(MAX_DURATION_MS + 1),

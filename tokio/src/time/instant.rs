@@ -32,7 +32,7 @@ use std::time::Duration;
 /// take advantage of `time::pause()` and `time::advance()`.
 #[derive(Clone, Copy, Eq, PartialEq, PartialOrd, Ord, Hash)]
 pub struct Instant {
-    std: std::time::Instant,
+    std: instant::Instant,
 }
 
 impl Instant {
@@ -49,8 +49,8 @@ impl Instant {
         variant::now()
     }
 
-    /// Create a `tokio::time::Instant` from a `std::time::Instant`.
-    pub fn from_std(std: std::time::Instant) -> Instant {
+    /// Create a `tokio::time::Instant` from a `instant::Instant`.
+    pub fn from_std(std: instant::Instant) -> Instant {
         Instant { std }
     }
 
@@ -62,8 +62,8 @@ impl Instant {
         Self::now() + Duration::from_secs(86400 * 365 * 30)
     }
 
-    /// Convert the value into a `std::time::Instant`.
-    pub fn into_std(self) -> std::time::Instant {
+    /// Convert the value into a `instant::Instant`.
+    pub fn into_std(self) -> instant::Instant {
         self.std
     }
 
@@ -150,14 +150,14 @@ impl Instant {
     }
 }
 
-impl From<std::time::Instant> for Instant {
-    fn from(time: std::time::Instant) -> Instant {
+impl From<instant::Instant> for Instant {
+    fn from(time: instant::Instant) -> Instant {
         Instant::from_std(time)
     }
 }
 
-impl From<Instant> for std::time::Instant {
-    fn from(time: Instant) -> std::time::Instant {
+impl From<Instant> for instant::Instant {
+    fn from(time: Instant) -> instant::Instant {
         time.into_std()
     }
 }
@@ -188,7 +188,7 @@ impl ops::Sub<Duration> for Instant {
     type Output = Instant;
 
     fn sub(self, rhs: Duration) -> Instant {
-        Instant::from_std(std::time::Instant::sub(self.std, rhs))
+        Instant::from_std(instant::Instant::sub(self.std, rhs))
     }
 }
 
@@ -209,7 +209,7 @@ mod variant {
     use super::Instant;
 
     pub(super) fn now() -> Instant {
-        Instant::from_std(std::time::Instant::now())
+        Instant::from_std(instant::Instant::now())
     }
 }
 

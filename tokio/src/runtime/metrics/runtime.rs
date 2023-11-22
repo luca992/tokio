@@ -607,7 +607,7 @@ impl RuntimeMetrics {
     /// ```
     ///
     /// [`enable_metrics_poll_count_histogram()`]: crate::runtime::Builder::enable_metrics_poll_count_histogram
-    /// [`Instant::now()`]: std::time::Instant::now
+    /// [`Instant::now()`]: instant::Instant::now
     pub fn poll_count_histogram_enabled(&self) -> bool {
         self.handle
             .inner

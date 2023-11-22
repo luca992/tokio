@@ -26,7 +26,7 @@
 //!         .build();
 //!
 //!     assert_eq!(stream_mock.next().await, Some(1));
-//!     let start = std::time::Instant::now();
+//!     let start = instant::Instant::now();
 //!     assert_eq!(stream_mock.next().await, Some(2));
 //!     let elapsed = start.elapsed();
 //!     assert!(elapsed >= Duration::from_millis(300));

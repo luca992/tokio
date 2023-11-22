@@ -971,7 +971,7 @@ impl Builder {
         /// ```
         ///
         /// [`Handle::metrics()`]: crate::runtime::Handle::metrics
-        /// [`Instant::now()`]: std::time::Instant::now
+        /// [`Instant::now()`]: instant::Instant::now
         pub fn enable_metrics_poll_count_histogram(&mut self) -> &mut Self {
             self.metrics_poll_count_histogram_enable = true;
             self

@@ -2,7 +2,7 @@
 
 //! Source of time abstraction.
 //!
-//! By default, `std::time::Instant::now()` is used. However, when the
+//! By default, `instant::Instant::now()` is used. However, when the
 //! `test-util` feature flag is enabled, the values returned for `now()` are
 //! configurable.
 
@@ -13,7 +13,7 @@ cfg_not_test_util! {
     pub(crate) struct Clock {}
 
     pub(crate) fn now() -> Instant {
-        Instant::from_std(std::time::Instant::now())
+        Instant::from_std(instant::Instant::now())
     }
 
     impl Clock {
@@ -82,10 +82,10 @@ cfg_test_util! {
         enable_pausing: bool,
 
         /// Instant to use as the clock's base instant.
-        base: std::time::Instant,
+        base: instant::Instant,
 
         /// Instant at which the clock was last unfrozen.
-        unfrozen: Option<std::time::Instant>,
+        unfrozen: Option<instant::Instant>,
 
         /// Number of `inhibit_auto_advance` calls still in effect.
         auto_advance_inhibit_count: usize,
@@ -159,7 +159,7 @@ cfg_test_util! {
                 return Err("time is not frozen");
             }
 
-            inner.unfrozen = Some(std::time::Instant::now());
+            inner.unfrozen = Some(instant::Instant::now());
             Ok(())
         });
     }
@@ -211,14 +211,14 @@ cfg_test_util! {
     /// Returns the current instant, factoring in frozen time.
     pub(crate) fn now() -> Instant {
         if !DID_PAUSE_CLOCK.load(Ordering::Acquire) {
-            return Instant::from_std(std::time::Instant::now());
+            return Instant::from_std(instant::Instant::now());
         }
 
         with_clock(|maybe_clock| {
             Ok(if let Some(clock) = maybe_clock {
                 clock.now()
             } else {
-                Instant::from_std(std::time::Instant::now())
+                Instant::from_std(instant::Instant::now())
             })
         })
     }
@@ -227,7 +227,7 @@ cfg_test_util! {
         /// Returns a new `Clock` instance that uses the current execution context's
         /// source of time.
         pub(crate) fn new(enable_pausing: bool, start_paused: bool) -> Clock {
-            let now = std::time::Instant::now();
+            let now = instant::Instant::now();
 
             let clock = Clock {
                 inner: Mutex::new(Inner {

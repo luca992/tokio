@@ -600,7 +600,7 @@ rt_test! {
 
         rt.block_on(async move {
             assert_ok!(tokio::task::spawn_blocking(|| {
-                let now = std::time::Instant::now();
+                let now = instant::Instant::now();
                 let dur = Duration::from_millis(1);
 
                 // use the futures' block_on fn to make sure we aren't setting

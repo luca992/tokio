@@ -10,5 +10,5 @@ async fn main() -> Result<(), ()> {
 }
 
 fn never() -> bool {
-    std::time::Instant::now() > std::time::Instant::now()
+    instant::Instant::now() > instant::Instant::now()
 }
